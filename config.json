@@ -1,7 +1,8 @@
 {
     "game": {
-        "title": "Monster Game",
+        "title": "Pocketro",
         "iframe_url": "https://games.crazygames.com/en_US/pocketro/index.html",
+        "description": "Pocketro is a fast-paced roguelike card game that fuses poker mechanics with strategic deck-building. You'll craft winning hands, collect random power-ups, and face tougher challenges with each round. Every decision shapes your run, making each session unpredictable and rewarding. Test your instincts, take risks, and outsmart the table in a game of clever gambits.",
         "iframe_width": 960,
         "iframe_height": 600
     },
@@ -14,19 +15,19 @@
     "features": [
         {
             "title": "Multiple Characters",
-            "description": "在这里描述角色系统"
+            "description": "Choose from a variety of unique characters, each with their own special abilities and playstyles."
         },
         {
             "title": "Weapon System",
-            "description": "在这里描述武器系统"
+            "description": "Collect and upgrade various weapons to create powerful combinations."
         },
         {
             "title": "Level Up System",
-            "description": "在这里描述升级系统"
+            "description": "Gain experience and level up to unlock new abilities and enhance your character."
         },
         {
             "title": "Boss Battles",
-            "description": "在这里描述Boss战斗系统"
+            "description": "Face challenging boss battles that will test your skills and strategy."
         }
     ],
     "controls": {
