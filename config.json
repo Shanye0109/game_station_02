@@ -1,0 +1,45 @@
+{
+    "game": {
+        "title": "Monster Game",
+        "iframe_url": "https://games.crazygames.com/en_US/pocketro/index.html",
+        "iframe_width": 960,
+        "iframe_height": 600
+    },
+    "about": {
+        "description": "这里填写游戏描述",
+        "version": "1.0.0",
+        "developer": "开发者名称",
+        "publisher": "发行商名称"
+    },
+    "features": [
+        {
+            "title": "Multiple Characters",
+            "description": "在这里描述角色系统"
+        },
+        {
+            "title": "Weapon System",
+            "description": "在这里描述武器系统"
+        },
+        {
+            "title": "Level Up System",
+            "description": "在这里描述升级系统"
+        },
+        {
+            "title": "Boss Battles",
+            "description": "在这里描述Boss战斗系统"
+        }
+    ],
+    "controls": {
+        "keyboard": {
+            "movement": "WASD 或方向键移动",
+            "pause": "空格键暂停",
+            "select": "E 或回车键确认",
+            "back": "ESC键返回/菜单"
+        },
+        "mobile": {
+            "movement": "左侧虚拟摇杆移动",
+            "actions": "右侧按钮操作",
+            "menu": "点击屏幕右上角按钮"
+        }
+    }
+} 
