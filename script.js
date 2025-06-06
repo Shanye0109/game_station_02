@@ -88,21 +88,16 @@ document.addEventListener("contextmenu", (event) => event.preventDefault());
 
 // 初始化 SDK
 window.addEventListener('load', function() {
-    // 检查环境
-    window.CrazyGames.SDK.getEnvironment((_error, environment) => {
-        if (environment !== 'disabled') {
-            // 游戏加载开始
-            window.CrazyGames.SDK.game.sdkGameLoadingStart();
+    // 游戏加载开始
+    window.CrazyGames.SDK.game.sdkGameLoadingStart();
 
-            // 监听 iframe 加载完成
-            const gameFrame = document.querySelector('.game-container iframe');
-            gameFrame.addEventListener('load', function() {
-                // 游戏加载完成
-                window.CrazyGames.SDK.game.sdkGameLoadingStop();
-                
-                // 通知游戏开始
-                window.CrazyGames.SDK.game.gameplayStart();
-            });
-        }
+    // 监听 iframe 加载完成
+    const gameFrame = document.querySelector('.game-container iframe');
+    gameFrame.addEventListener('load', function() {
+        // 游戏加载完成
+        window.CrazyGames.SDK.game.sdkGameLoadingStop();
+        
+        // 通知游戏开始
+        window.CrazyGames.SDK.game.gameplayStart();
     });
 }); 
