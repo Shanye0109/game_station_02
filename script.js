@@ -90,43 +90,19 @@ document.addEventListener("contextmenu", (event) => event.preventDefault());
 window.addEventListener('load', function() {
     // 检查环境
     window.CrazyGames.SDK.getEnvironment((_error, environment) => {
-        console.log('CrazyGames environment:', environment);
-        
-        // 创建环境提示
-        const envInfo = document.createElement('div');
-        envInfo.style.position = 'fixed';
-        envInfo.style.top = '10px';
-        envInfo.style.right = '10px';
-        envInfo.style.background = 'rgba(0,0,0,0.7)';
-        envInfo.style.color = 'white';
-        envInfo.style.padding = '10px';
-        envInfo.style.borderRadius = '5px';
-        envInfo.style.zIndex = '9999';
-        
-        if (environment === 'local') {
-            envInfo.textContent = '本地开发环境：某些功能可能不可用。建议部署到服务器测试。';
-            envInfo.style.backgroundColor = '#ff9800';
-        } else if (environment === 'disabled') {
-            envInfo.textContent = 'SDK已禁用：请在允许的域名下运行。';
-            envInfo.style.backgroundColor = '#f44336';
-        } else {
-            envInfo.textContent = '正常环境：SDK功能已启用。';
-            envInfo.style.backgroundColor = '#4caf50';
+        if (environment !== 'disabled') {
+            // 游戏加载开始
+            window.CrazyGames.SDK.game.sdkGameLoadingStart();
+
+            // 监听 iframe 加载完成
+            const gameFrame = document.querySelector('.game-container iframe');
+            gameFrame.addEventListener('load', function() {
+                // 游戏加载完成
+                window.CrazyGames.SDK.game.sdkGameLoadingStop();
+                
+                // 通知游戏开始
+                window.CrazyGames.SDK.game.gameplayStart();
+            });
         }
-        
-        document.body.appendChild(envInfo);
-
-        // 游戏加载开始
-        window.CrazyGames.SDK.game.sdkGameLoadingStart();
-
-        // 监听 iframe 加载完成
-        const gameFrame = document.querySelector('.game-container iframe');
-        gameFrame.addEventListener('load', function() {
-            // 游戏加载完成
-            window.CrazyGames.SDK.game.sdkGameLoadingStop();
-            
-            // 通知游戏开始
-            window.CrazyGames.SDK.game.gameplayStart();
-        });
     });
 }); 
