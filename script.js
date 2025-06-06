@@ -11,11 +11,6 @@ async function loadConfig() {
 
 // 更新页面内容
 function updateContent(config) {
-    // 更新标题
-    document.title = config.game.title;
-    document.querySelector('.logo').textContent = config.game.title;
-    document.querySelector('h1').textContent = `Play ${config.game.title}`;
-
     // 更新游戏iframe
     const iframe = document.querySelector('.game-container iframe');
     iframe.src = config.game.iframe_url;
